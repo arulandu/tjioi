@@ -1,0 +1,50 @@
+:root {
+  --color-main-hue: 206;
+  --color-accent-hue: 37;
+  
+  --color-navy-regular: hsl(var(--color-main-hue), 65%, 11%);
+  --color-navy-lighter: hsl(var(--color-main-hue), 58%, 16%);
+  --color-navy-lightest: hsl(var(--color-main-hue), 41%, 23%);
+
+  --color-slate-regular: hsl(var(--color-main-hue), 15%, 63%);
+  --color-slate-lighter: hsl(var(--color-main-hue), 31%, 74%);
+  --color-slate-lightest: hsl(var(--color-main-hue), 70%, 88%);
+
+  --color-white-regular: hsl(var(--color-main-hue), 100%, 95%);
+
+  --color-orange-regular: hsl(var(--color-accent-hue), 100%, 48%);
+  --color-orange-lighter: hsl(var(--color-accent-hue), 94%, 63%);
+}
+
+* {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--color-navy-regular);
+}
+
+/* Navigation */
+header {
+  width: 100%;
+  position: fixed;
+  background-color: var(--color-navy-lightest);
+  opacity: 50%;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  color: var(--color-orange-lighter);
+}
