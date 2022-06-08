@@ -2,6 +2,8 @@
   --color-main-hue: 206;
   --color-accent-hue: 37;
   
+  --color-glass-regular: hsl(var(--color-main-hue), 58%, 16%, 0.75);
+
   --color-navy-regular: hsl(var(--color-main-hue), 65%, 11%);
   --color-navy-lighter: hsl(var(--color-main-hue), 58%, 16%);
   --color-navy-lightest: hsl(var(--color-main-hue), 41%, 23%);
@@ -14,6 +16,16 @@
 
   --color-orange-regular: hsl(var(--color-accent-hue), 100%, 48%);
   --color-orange-lighter: hsl(var(--color-accent-hue), 94%, 63%);
+
+  --font-size-md: 0.5rem;
+  --font-size-lg: 0.75rem;
+  --font-size-xl: 1rem;
+  --font-size-2xl: 1.25rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 2rem;
+  --font-size-5xl: 2.25rem;
+  
+  --gutter-size: 2rem;
 }
 
 * {
@@ -56,11 +68,11 @@ html, body {
 
 /* Design Trend: Glassmorphism */
 .panel {
-  background-color: var(--color-navy-lightest);
-  padding: 3.5rem;
+  background-color: var(--color-glass-regular);
+  padding: var(--font-size-2xl);
   
   border: 1px solid var(--color-navy-lighter);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
 }
 
 .button {
@@ -72,7 +84,7 @@ html, body {
   text-decoration: none;
 
   font-weight: bold;
-  font-size: 2rem;
+  font-size: var(--font-size-xl);
 
   border-radius: 0.5rem;
   padding: 1rem 2.5rem;
@@ -86,35 +98,40 @@ header {
 
 header nav {
   display: flex;
-  padding: 2rem 6rem;
+  padding: calc(var(--gutter-size)/2) var(--gutter-size);
   /* background-color: var(--color-navy-lightest); */
+}
+
+header nav img {
+  width: var(--font-size-5xl);
+  height: var(--font-size-5xl)/2;
 }
 
 /* Hero */
 #hero {
-  height: 100vh;
-  padding: 6rem;
+  min-height: 100vh;
+  padding: 4rem var(--gutter-size);
 
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 #hero .panel {
-  max-width: 60%;
+  max-width: 64rem;
 }
 
 #hero .panel h1 {
   font-weight: 900;
-  font-size: 6rem;
+  font-size: var(--font-size-5xl);
   color: var(--color-orange-lighter);
 }
 
 #hero .panel h2 {
   margin-top: 1rem;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: var(--font-size-2xl);
 
   color: var(--color-white-regular);
 }
@@ -123,7 +140,7 @@ header nav {
   margin: 2.75rem 0;
 
   font-weight: 400;
-  font-size: 2rem;
+  font-size: var(--font-size-xl);
   color: var(--color-white-regular);
 
   list-style-type: none;
@@ -134,7 +151,7 @@ header nav {
   min-height: 3rem;
   
   position: relative;
-  padding-left: 4.5rem;
+  padding-left: 2.5rem;
 }
 
 #hero .panel ul li::before {
@@ -144,12 +161,12 @@ header nav {
 }
 
 #hero #timer {
-  width: 31.25rem;
-  height: 31.25rem;
+  width: calc(var(--font-size-5xl)*5);
+  height: calc(var(--font-size-5xl)*5);
   
   border: 10px solid var(--color-orange-regular);
   border-radius: 50%;
-  background-color: var(--color-navy-lightest);
+  background-color: var(--color-glass-regular);
 
   display: flex;
   justify-content: center;
@@ -160,31 +177,32 @@ header nav {
   width: 75%;
   color: var(--color-white-regular);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   text-align: center;
 }
 
 /* general grid section styles */
 #logistics h2, #leadership h2 {
+  margin-bottom: 1rem;
   font-weight: 500;
-  font-size: 4rem;
+  font-size: var(--font-size-3xl);
   color: var(--color-orange-lighter)
 }
 
 #logistics h3, #leadership h3 {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: var(--font-size-xl);
 }
 
 #logistics .panel, #leadership .panel {
   display: block;
   height: fit-content;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: var(--font-size-xl);
   color: var(--color-white-regular);
 }
 
-#logistics .panel a, #leadership .panel a {
+a {
   text-decoration: underline;
 }
 
@@ -193,35 +211,35 @@ header nav {
 }
 
 /* Logistics Section */
-#logistics {
-  padding: 0 6rem;
+#logistics,#leadership {
   display: grid;
-  grid-template-columns: 5fr 3fr;
-  column-gap: 2rem;
+  padding: 0 var(--gutter-size);
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
 }
 
 #logistics div {
   height: fit-content;
   display: grid;
-  row-gap: 2rem;
-}
-
-/* Leadership Section */
-
-#leadership {
-  padding: 0 6rem;
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  column-gap: 2rem;
+  row-gap: 1rem;
 }
 
 #leadership div {
   height: fit-content;
 }
 
+/* Leadership Section */
+
 #leadership {
   margin-top: 4rem;
+  padding: 0 var(--gutter-size);
+  display: grid;
+
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
 }
+
+
 
 #leadership .panel:nth-child(1) ul {
   list-style-type: none;
@@ -250,18 +268,89 @@ header nav {
 
 footer {
   margin-top: 4rem;
-  padding: 2rem 6rem;
+  padding: 2rem var(--gutter-size);
 }
 
 footer p {
   text-align: right;
   color: var(--color-white-regular);
   font-weight: 100;
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 footer p a {
   text-decoration: none;
   color: var(--color-white-regular);
   font-weight: 400;
+}
+
+@media screen and (min-width: 640px) {
+  
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size-md: 0.75rem;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.75rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-4xl: 3rem;
+    --font-size-5xl: 4rem;
+    
+    --gutter-size: 2rem;
+  }
+
+  /* Logistics Section */
+  #logistics {
+    grid-template-columns: 5fr 3fr;
+    column-gap: 2rem;
+  }
+
+  #logistics div {
+    row-gap: 2rem;
+  }
+
+  /* Leadership Section */
+
+  #leadership {
+    grid-template-columns: 4fr 3fr;
+    column-gap: 2rem;
+  }
+
+  #leadership div {
+    height: fit-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --font-size-md: 0.75rem;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+    --font-size-4xl: 4rem;
+    --font-size-5xl: 5rem;
+
+    --gutter-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  :root {
+    --font-size-md: 1rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 3rem;
+    --font-size-3xl: 4rem;
+    --font-size-4xl: 5rem;
+    --font-size-5xl: 6rem;
+
+    --gutter-size: 6rem;
+  }
 }
