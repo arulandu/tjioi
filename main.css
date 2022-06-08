@@ -24,27 +24,142 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('static/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
+  font-weight: 1 999;
+}
+
 html, body {
   background-color: var(--color-navy-regular);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #A8BDD1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #889CB0;
+} */
+
+/* Design Trend: Glassmorphism */
+.panel {
+  background-color: var(--color-navy-lightest);
+  padding: 3.5rem;
+  
+  border: 1px solid var(--color-navy-lighter);
+  border-radius: 0.75rem;
+}
+
+.button {
+  display: block;
+  width: fit-content;
+
+  background-color: var(--color-orange-lighter);
+  color: var(--color-navy-regular);
+  text-decoration: none;
+
+  font-weight: bold;
+  font-size: 2rem;
+
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
 }
 
 /* Navigation */
 header {
   width: 100%;
   position: fixed;
-  background-color: var(--color-navy-lightest);
-  opacity: 50%;
+}
+
+header nav {
+  display: flex;
+  padding: 2rem 6rem;
+  /* background-color: var(--color-navy-lightest); */
 }
 
 /* Hero */
 .hero {
   height: 100vh;
+  padding: 6rem;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hero .panel {
+  max-width: 60%;
+}
+
+.hero .panel h1 {
+  font-weight: 900;
+  font-size: 6rem;
+  color: var(--color-orange-lighter);
+}
+
+.hero .panel h2 {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 3rem;
+
+  color: var(--color-white-regular);
+}
+
+.hero .panel ul {
+  margin: 2.75rem 0;
+
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--color-white-regular);
+
+  list-style-type: none;
+}
+
+.hero .panel ul li {
+  margin: 1rem 0;
+  min-height: 3rem;
+  
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.hero .panel ul li::before {
+  position: absolute;
+  content: url('./static/icons/check.svg');
+  left: 0;
+}
+
+.hero #timer {
+  width: 31.25rem;
+  height: 31.25rem;
+  
+  border: 10px solid var(--color-orange-regular);
+  border-radius: 50%;
+  background-color: var(--color-navy-lightest);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero h1 {
-  color: var(--color-orange-lighter);
+.hero #timer p {
+  width: 75%;
+  color: var(--color-white-regular);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
 }
