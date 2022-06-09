@@ -2,7 +2,7 @@
   --color-main-hue: 206;
   --color-accent-hue: 37;
   
-  --color-glass-regular: hsl(var(--color-main-hue), 58%, 16%, 0.75);
+  --color-glass-regular: hsl(var(--color-main-hue), 58%, 16%, 0.50);
 
   --color-navy-regular: hsl(var(--color-main-hue), 65%, 11%);
   --color-navy-lighter: hsl(var(--color-main-hue), 58%, 16%);
@@ -43,36 +43,55 @@
 }
 
 html, body {
-  background-color: var(--color-navy-regular);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 20px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: var(--color-navy-regular);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #A8BDD1;
+  background-color: var(--color-slate-lightest);
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #889CB0;
-} */
+  background-color: var(--color-slate-lighter);
+}
 
 /* Design Trend: Glassmorphism */
 .panel {
   background-color: var(--color-glass-regular);
   padding: var(--font-size-2xl);
+  backdrop-filter: blur(4px);
   
   border: 1px solid var(--color-navy-lighter);
   border-radius: 0.5rem;
+}
+
+.fade-up:not(.visited), .panel:not(.visited) {
+  opacity: 0%;
+}
+.fade-up.visited, .panel.visited {
+  animation: fade-up 1s 1;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0%;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
 .button {
@@ -88,6 +107,44 @@ html, body {
 
   border-radius: 0.5rem;
   padding: 1rem 2.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color-orange-regular);
+}
+
+.bg {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-navy-regular);
+}
+
+a:not(.button) {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-white-regular);
+  transition: color 0.2s ease-in-out;
+}
+
+a:not(.button)::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  content: '';
+  width: 100%;
+  height: 2px;
+  
+  background-color: var(--color-white-regular);
+  transition: background-color 0.2s ease-in-out;
+}
+
+a:not(.button):hover::after {
+    background-color: var(--color-orange-lighter);
 }
 
 /* Navigation */
@@ -97,6 +154,7 @@ header {
 }
 
 header nav {
+  opacity: 25%;
   display: flex;
   padding: calc(var(--gutter-size)/2) var(--gutter-size);
   /* background-color: var(--color-navy-lightest); */
@@ -161,12 +219,11 @@ header nav img {
 }
 
 #hero #timer {
+  --bar-width: 2%;
+  position: relative;
+
   width: calc(var(--font-size-5xl)*5);
   height: calc(var(--font-size-5xl)*5);
-  
-  border: 10px solid var(--color-orange-regular);
-  border-radius: 50%;
-  background-color: var(--color-glass-regular);
 
   display: flex;
   justify-content: center;
@@ -174,11 +231,35 @@ header nav img {
 }
 
 #hero #timer p {
+  position: relative;
   width: 75%;
   color: var(--color-white-regular);
   font-weight: bold;
   font-size: var(--font-size-lg);
   text-align: center;
+}
+
+#hero #timer svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#hero #timer svg circle:nth-of-type(1) {
+  fill: var(--color-glass-regular);
+  stroke: var(--color-glass-regular);
+  /* stroke: linear-gradient(var(--color-orange-regular), var(--color-orange-lighter)); */
+  stroke-width: calc(var(--bar-width) - 2px);
+
+  /* circumference = 2*pi*r = 6r */
+  stroke-dasharray: calc(2 * 3 * 50%);
+  stroke-dashoffset: 0;
+}
+
+#hero #timer svg circle:nth-of-type(2) {
+  fill: transparent;
+  stroke: url("#timerGradient");
+  stroke-width: calc(var(--bar-width));
 }
 
 /* general grid section styles */
@@ -200,10 +281,6 @@ header nav img {
   font-weight: 400;
   font-size: var(--font-size-xl);
   color: var(--color-white-regular);
-}
-
-a {
-  text-decoration: underline;
 }
 
 #logistics .panel ul, #leadership .panel ul {

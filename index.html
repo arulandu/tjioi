@@ -5,23 +5,22 @@
   <title>TJ IOI 2022</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta name="description"
-    content="TJ IOI 2022">
+  <meta name="description" content="TJ IOI 2022">
   <meta name="keywords" content="TJIOI, TJIOI 2022, TJSCT, Computer Team, TJHSST">
   <meta name="robots" content="index, follow">
   <meta name="web_author" content="Alvan Caleb Arulandu">
-  
+
   <meta name="msapplication-TileColor" content="#0a1f2f">
-  <meta name="msapplication-config" content="/static/icons/browserconfig.xml">
+  <meta name="msapplication-config" content="./browserconfig.xml">
   <meta name="theme-color" content="#0a1f2f">
-  
+
   <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
-  <link rel="manifest" href="/static/icons/site.webmanifest">
+  <link rel="manifest" href="./site.webmanifest">
   <link rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#0a1f2f">
   <link rel="shortcut icon" href="/static/icons/favicon.ico">
-  
+
 
   <link rel="stylesheet" href="./main.css" />
   <link rel="icon" type="image/x-icon" href="./static/logo.png" />
@@ -33,7 +32,13 @@
       <img width="120" height="60" src="./static/logo.png">
     </nav>
   </header>
+  <script src="./index.js" defer></script>
+  <script src="./lib/p5.min.js"></script>
+  <script src="./lib/vanta.topology.min.js"></script>
   <main>
+    <div class="bg" id="bg">
+
+    </div>
     <section id="hero">
       <div class="panel">
         <h1>TJ IOI 2022</h1>
@@ -46,8 +51,18 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScXtZ5duMZcTWiPta85k1i6yQXP4R5SsQSSofFz4GU859C-lQ/viewform"
           class="button">Register</a>
       </div>
-      <div id="timer">
-        <p>Registration closes in 2 days and 10 minutes!</p>
+      <div id="timer" class="fade-up">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+          <defs>
+            <linearGradient id="timerGradient">
+              <stop offset="0%" stop-color="hsl(var(--color-accent-hue), 100%, 48%)"/>
+              <stop offset="100%" stop-color="hsl(var(--color-accent-hue), 94%, 63%)"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50%" cy="50%" r="40%" stroke-linecap="round" />
+          <circle cx="50%" cy="50%" r="40%" stroke-linecap="round" id="timerBar"/>
+        </svg>
+        <p>Registration closes in 02:01:01:02</p>
       </div>
     </section>
 
@@ -103,9 +118,14 @@
         <p>This contest would not be possible without the efforts of TJ's computer team, specifically:</p>
         <ul>
           <li><span>Kevin Shan</span><span>Organizer and Problem Setter</span></li>
-          <li><span>Kevin Shan</span><span>Organizer and Problem Setter</span></li>
-          <li><span>Kevin Shan</span><span>Organizer and Problem Setter</span></li>
-          <li><span>Kevin Shan</span><span>Organizer and Problem Setter</span></li>
+          <li><span>Andrew Wang</span><span>Organizer and Problem Setter</span></li>
+          <li><span>Ray Bai</span><span>Problem Setter</span></li>
+          <li><span>Daniel Zeng</span><span>Problem Setter</span></li>
+          <li><span>Jesse Choe</span><span>Problem Setter and Web Developer</span></li>
+          <li><span>Johnny Liu</span><span>Problem Setter and Web Developer</span></li>
+          <li><span>Daniel Qui</span><span>Web Developer</span></li>
+          <li><span>Sol Song</span><span>Problem Setter</span></li>
+          <li><span>Arnav Jain</span><span>Problem Setter</span></li>
         </ul>
       </div>
       <div class="panel">
