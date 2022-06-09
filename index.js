@@ -57,8 +57,8 @@ VANTA.TOPOLOGY({
   minWidth: 200.00,
   scale: 1.00,
   scaleMobile: 1.00,
-  color: '#233C54',
-  backgroundColor: '#0A1F2F'
+  color: '#9792AE',
+  backgroundColor: '#100A2F'
 })
 
 const observer = new IntersectionObserver(entries => {
