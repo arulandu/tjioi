@@ -115,6 +115,11 @@ html, body {
   background-color: var(--color-orange-regular);
 }
 
+main {
+  background-color: transparent;
+  z-index: 10;
+}
+
 .bg {
   position: fixed;
   z-index: 0;
@@ -152,7 +157,7 @@ a:not(.button):hover::after {
 header {
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 50;
 }
 
 header nav {
@@ -346,6 +351,7 @@ header nav img {
 /* Footer */
 
 footer {
+  position: relative;
   margin-top: 4rem;
   padding: 2rem var(--gutter-size);
 }
