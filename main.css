@@ -378,7 +378,7 @@ footer p {
   text-align: right;
   color: var(--color-white-regular);
   font-weight: 100;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
 }
 
 footer p a {
