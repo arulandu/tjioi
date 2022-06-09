@@ -91,3 +91,5 @@ const observer = new IntersectionObserver(entries => {
 
 const elements = document.querySelectorAll('.panel, .fade-up')
 elements.forEach(el => observer.observe(el))
+
+timerLoop()
