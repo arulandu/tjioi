@@ -67,6 +67,10 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('visited');
     }
   });
+}, {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1
 });
 
 const elements = document.querySelectorAll('.panel, .fade-up')

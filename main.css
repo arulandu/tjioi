@@ -116,6 +116,7 @@ html, body {
 }
 
 main {
+  position: relative;
   background-color: transparent;
   z-index: 10;
 }
@@ -348,15 +349,18 @@ header nav img {
   margin: 0 0.25rem 0 0.5rem;
 }
 
+#leadership #partners {
+  position: relative;
+}
 #leadership #partners div {
   position: absolute;
   right: var(--font-size-2xl);
-  top: calc(var(--font-size-2xl) + var(--font-size-3xl) / 3);
+  top: calc(var(--font-size-2xl) + var(--font-size-3xl) / 4);
 }
 #leadership #partners div img {
   margin: 0 0.25rem;
-  width: 2rem;
-  height: 2rem;
+  width: var(--font-size-2xl);
+  height: var(--font-size-2xl);
 }
 
 /* Footer */
