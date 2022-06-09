@@ -1,5 +1,5 @@
 :root {
-  --color-main-hue: 250;
+  --color-main-hue: 206;
   --color-accent-hue: 37;
   
   --color-glass-regular: hsl(var(--color-main-hue), 58%, 16%, 0.50);
