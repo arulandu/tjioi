@@ -24,7 +24,7 @@ const timerLoop = () => {
   let diff = 0, maxDiff = 0, update = true;
   if(contestStart - now > 0){
     diff = contestStart-now;
-    maxDiff = 1000*60*60*24*3;Con
+    maxDiff = 1000*60*60*24*3;
 
     const {hours, minutes, seconds} = getTime(diff);
     txt.innerHTML = `Contest starts in <br>${hours} hrs ${minutes}m ${seconds}s`;
