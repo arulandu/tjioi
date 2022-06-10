@@ -24,10 +24,10 @@ const timerLoop = () => {
   let diff = 0, maxDiff = 0, update = true;
   if(contestStart - now > 0){
     diff = contestStart-now;
-    maxDiff = 1000*60*60*24*3;
+    maxDiff = 1000*60*60*24*3;Con
 
     const {hours, minutes, seconds} = getTime(diff);
-    txt.innerHTML = `Registration closes in <br>${hours} hrs ${minutes}m ${seconds}s`;
+    txt.innerHTML = `Contest starts in <br>${hours} hrs ${minutes}m ${seconds}s`;
   } else if(contestEnd - now > 0){
     diff = contestEnd-now;
     maxDiff = 1000*60*60*3;
