@@ -18,8 +18,8 @@ const getTime = (diff) => {
 
 const timerLoop = () => {
   const now = new Date();
-  const contestStart = new Date('June 11, 2022 17:00:00')
-  const contestEnd = new Date('June 11, 2022 20:00:00')
+  const contestStart = new Date('2022-06-11T17:00:00.000Z')
+  const contestEnd = new Date('2022-06-11T20:00:00.000Z')
   
   let diff = 0, maxDiff = 0, update = true;
   if(contestStart - now > 0){
