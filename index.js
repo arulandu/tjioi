@@ -37,7 +37,7 @@ const timerLoop = () => {
   } else {
     setPercent(1.0);
     update = false;
-    txt.innerHTML = `Contest has finished. Results pending...`;
+    txt.innerHTML = `Contest has finished. <br> Check out the <a href="./static/contest/TJIOI_2022_Editorial.pdf" target="_blank">solutions</a> <br> and fill out this <a href="https://forms.gle/JgWiMBFsoi7cD3H39" target="_blank">survey</a>!`;
   }
     
   if(update){
