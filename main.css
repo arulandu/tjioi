@@ -44,6 +44,7 @@
 }
 
 html, body {
+  position: relative;
   background-color: var(--color-navy-regular);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
@@ -162,20 +163,30 @@ header {
   width: 100%;
   position: fixed;
   z-index: 50;
+  bottom: 0;
+  left: 0;
 }
 
 header nav {
-  opacity: 25%;
+  /* opacity: 50%; */
   display: flex;
-  padding: calc(var(--gutter-size)/2) var(--gutter-size);
+  padding: calc(var(--gutter-size)/8) calc(var(--gutter-size)/8);
   /* background-color: var(--color-navy-lightest); */
 }
 
 header nav img {
-  width: var(--font-size-5xl);
-  height: var(--font-size-5xl)/2;
+  width: var(--font-size-3xl);
+  height: var(--font-size-3xl)/2;
 }
 
+/* banner */
+.banner {
+  width: 100%;  
+  padding: 1rem;
+  background-color: var(--color-navy-lighter);
+  color: var(--color-white-regular);
+  text-align: center;
+}
 /* Hero */
 #hero {
   min-height: 100vh;
